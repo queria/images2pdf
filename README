@@ -5,6 +5,7 @@ Qt/Ruby application to merge all images from directory to single pdf.
 - uses/requires qtruby and prawn
 - places one image per page
 - fits image to page size (A4)
+- run main.rb for Qt gui or use images2pdf.rb as cli command
 
 Todo and possible improvements (read as 'missing features'):
 - page and image size could be specified by user?
@@ -13,7 +14,6 @@ Todo and possible improvements (read as 'missing features'):
 - image2pdf processing code is now separate from qt gui but for price of gui freezes
 - - (uses callback communication)
 - - could be placed in separate thread/background job etc
-- - this logic could be extremely easily wrapped up in CLI interface
 
 
 ---------------------------------------------------------------

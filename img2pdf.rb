@@ -1,3 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
 require 'pathname'
 require 'prawn'
 
@@ -70,4 +73,19 @@ class Images2PDF
 		@pdf.render_file @target
 		@callback_finished.call unless @callback_finished.nil?
 	end
+end
+
+if __FILE__ == $0
+	if ARGV.length < 2 or ARGV.include? '-h' or ARGV.include? '--help'
+		puts <<-EOHELP
+use this as:
+$ img2pdf <source_dir> <target_pdf>
+for example
+$ img2pdf /path/to/my/images_dir/ /path/to/my/exported.pdf
+		EOHELP
+		exit
+	end
+
+	i2p = Images2PDF.new(ARGV[0], ARGV[1], true)
+	i2p.start
 end
