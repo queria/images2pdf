@@ -1,8 +1,5 @@
-
-#require 'gui/customer'
-#require 'gui/invoice'
-#require 'data/storage'
 require 'gui/commons'
+require 'img2pdf'
 
 class MainWindow < Qt::MainWindow
 
@@ -40,9 +37,6 @@ class MainWindow < Qt::MainWindow
 		@folder.dialog_caption = 'Images directory'.qtr
 		@file = FileInput.new FileInput::MODE_FSAVE
 		@file.dialog_caption = 'Save as PDF'.qtr
-
-		@folder.value = '/tmp/i2p/small'
-		@file.value = '/tmp/res.pdf'
 
 		@process_button = Qt::PushButton.new('Merge'.qtr)
 
