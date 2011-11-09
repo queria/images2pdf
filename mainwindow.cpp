@@ -77,7 +77,6 @@ void MainWindow::_init_connections()
 
 void MainWindow::revalidate()
 {
-    qDebug() << "revalidating";
     if(_folder->isReadableDir() && _file->isWritableFile()) {
         _status->setText(trUtf8("You can press Merge button now."));
         _process->setEnabled(true);
